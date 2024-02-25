@@ -1,0 +1,108 @@
+/** @format */
+
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #5e35b1;
+    --accent-color: #0b9c3c;
+    --neutral-light: #ffffff; /* White */
+    --neutral-dark: #333333; /* Dark */
+
+    /* Font Sizes */
+    --text-regular: 1rem;
+    --text-large: 1.25rem;
+    --heading-small: 1.5rem;
+    --heading-medium: 2rem;
+    --heading-large: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--neutral-light);
+    color: var(--neutral-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: var(--heading-large);
+}
+
+header p {
+    color: var(--neutral-dark);
+    font-size: var(--text-regular);
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--neutral-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+section.faq-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--neutral-light);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section.faq-item:hover {
+    background-color: var(--accent-color);
+}
+
+section.faq-item button {
+    font-size: var(--text-large);
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+section.faq-item .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+section.faq-item .answer p {
+    margin-top: 0.5rem;
+    font-size: var(--text-regular);
+    line-height: 1.6;
+}
+
+section.faq-item.active .answer {
+    max-height: 10rem; 
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: var(--heading-medium);
+    }
+
+    section.faq-item button {
+        font-size: var(--text-regular);
+    }
+}
